@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<link rel="stylesheet" href="sample.css">
+<title>じゃんけん</title>
+<script>
+        window.onload = function () {
+            //ここに記述
+
+            function random(max) {
+
+                var num = 0;
+                num = Math.floor(Math.random() * max + 1);
+                return num;
+            }
+            var num = random(3);
+
+            // document.getElementById("num").innerHTML=num;
+
+            function click_gu() {
+                //alert("This is a star box.")
+            
+                if (num == 1) {
+                    document.getElementById("pc").innerHTML = "コンピュータ: グー";
+                    document.getElementById("num").innerHTML = "AIKOOO!";
+                } else if (num == 2) {
+                    document.getElementById("pc").innerHTML = "コンピュータ: チョキ";
+                    document.getElementById("num").innerHTML = "You win!";
+                } else {
+                    document.getElementById("pc").innerHTML = "コンピュータ: パー";
+                    document.getElementById("num").innerHTML = "You lose!";
+                }
+            }
+
+            var btn = document.getElementById("gu_btn");
+            btn.onclick = function () {
+                click_gu();
+            }
+
+            function click_cho() {
+                //alert("This is a maru box.")
+                if (num == 1) {
+                    document.getElementById("pc").innerHTML = "コンピュータ: グー";
+                    document.getElementById("num").innerHTML = "You lose!";
+                } else if (num == 2) {
+                    document.getElementById("pc").innerHTML = "コンピュータ: チョキ";
+                    document.getElementById("num").innerHTML = "AIKOOO!";
+                } else {
+                    document.getElementById("pc").innerHTML = "コンピュータ: パー";
+                    document.getElementById("num").innerHTML = "You win!";
+                }
+            }
+
+            var btn = document.getElementById("cho_btn");
+            btn.onclick = function () {
+                click_cho();
+            }
+
+            function click_par() {
+               // alert("This is a shikaku box.")
+                if (num == 1) {
+                    document.getElementById("pc").innerHTML = "コンピュータ: グー";
+                    document.getElementById("num").innerHTML = "You win!";
+                } else if (num == 2) {
+                    document.getElementById("pc").innerHTML = "コンピュータ: チョキ";
+                    document.getElementById("num").innerHTML = "You lose!";
+                } else {
+                    document.getElementById("pc").innerHTML = "コンピュータ: パー";
+                    document.getElementById("num").innerHTML = "AIKOOO!";
+                }
+            }
+
+            var btn = document.getElementById("par_btn");
+            btn.onclick = function () {
+                click_par();
+            }
+
+        };
+</script>
+</head>
+<body>
+
+<header>
+	<h1>じゃんけん</h1>
+</header>
+
+<main>
+	<ul>
+		<li id="gu_btn">グー</li>
+		<li id="cho_btn">チョキ</li>
+		<li id="par_btn">パー</li>
+	</ul>
+	<div id="pc">コンピュータの出した手は？</div>
+	<div id="num">ここに表示されます</div>
+</main>
+
+<footer></footer>
+
+</body>
+</html>
